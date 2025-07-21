@@ -9,12 +9,21 @@ const config = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#6366F1",    
+        accent: "#F59E0B",    
+        danger: "#EF4444",
+        success: "#10B981",
+        background: "#F9FAFB",
+        foreground: "#111827",
+      },
       fontFamily: {
         sans: ["var(--font-sans)"],
         mono: ["var(--font-mono)"],
       },
     },
   },
+  
   darkMode: "class",
   plugins: [heroui()],
 }
