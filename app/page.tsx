@@ -1,55 +1,31 @@
 import { Link } from "@heroui/link";
-import { Snippet } from "@heroui/snippet";
-import { Code } from "@heroui/code";
-import { button as buttonStyles } from "@heroui/theme";
+import { BarChart3 } from "lucide-react";
 
-import { siteConfig } from "@/config/site";
-import { title, subtitle } from "@/components/primitives";
-import { GithubIcon } from "@/components/icons";
-
-export default function Home() {
+export default function HomePage() {
   return (
-    <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
-      <div className="inline-block max-w-xl text-center justify-center">
-        <span className={title()}>Make&nbsp;</span>
-        <span className={title({ color: "violet" })}>beautiful&nbsp;</span>
-        <br />
-        <span className={title()}>
-          websites regardless of your design experience.
-        </span>
-        <div className={subtitle({ class: "mt-4" })}>
-          Beautiful, fast and modern React UI library.
-        </div>
+    <section className="text-center py-36 px-4 bg-background text-foreground">
+      <div className="flex justify-center mb-6">
+        <BarChart3 className="w-12 h-12 text-accent" />
       </div>
-
-      <div className="flex gap-3">
+      <h1 className="text-4xl md:text-5xl font-bold mb-4">
+        Encuestas en Tiempo Real, Simples y Potentes
+      </h1>
+      <p className="text-lg text-foreground/70 max-w-xl mx-auto mb-8">
+        Crea, comparte y analiza tus encuestas en segundos. Herramientas inteligentes, resultados al instante.
+      </p>
+      <div className="flex justify-center gap-4">
         <Link
-          isExternal
-          className={buttonStyles({
-            color: "primary",
-            radius: "full",
-            variant: "shadow",
-          })}
-          href={siteConfig.links.docs}
+          href="/about"
+          className="rounded-md bg-primary px-6 py-3 text-white font-semibold text-sm hover:bg-primary/90 transition"
         >
-          Documentation
+          Saber más
         </Link>
         <Link
-          isExternal
-          className={buttonStyles({ variant: "bordered", radius: "full" })}
-          href={siteConfig.links.github}
+          href="/create"
+          className="rounded-md border border-primary px-6 py-3 text-primary font-semibold text-sm hover:bg-primary/10 transition"
         >
-          <GithubIcon size={20} />
-          GitHub
+          Hacer una encuesta
         </Link>
-      </div>
-
-      <div className="mt-8">
-        <Snippet hideCopyButton hideSymbol variant="bordered">
-          <span>
-            Get started by editing <Code color="primary">app/page.tsx</Code>
-          </span>
-        </Snippet>
       </div>
     </section>
   );
